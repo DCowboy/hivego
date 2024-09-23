@@ -18,7 +18,6 @@ func (h *HiveRpcNode) checkAccount(wif *string) (string, error) {
 	query := hrpcQuery{
 		method: "account_by_key_api.get_key_references",
 		params: map[string]string{"keys": [*wif]},
-		Limit: limit,
 	}
 	res, err := h.rpcExec(h.address, query)
 	if err != nil {
